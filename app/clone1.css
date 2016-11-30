@@ -1,0 +1,165 @@
+*{
+	/* Universal reset: */
+	margin:0;
+	padding:0;
+}
+
+a, a:visited {
+	color:#ffffff;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+a img{
+	border:none;
+}
+
+h1{
+	/* The logo text */
+	font-size:3.5em;
+	padding:0.5em 0 0;
+	text-transform:uppercase;
+}
+
+h2{
+	font-size:2.2em;
+	font-weight:normal;
+	letter-spacing:0.01em;
+	text-transform:uppercase;
+}
+
+p{
+	line-height:1.5em;
+	padding-bottom:1em;
+}
+
+.line{
+	height:1px;
+	background-color:#24404c;
+	border-bottom:1px solid #416371;
+	margin:1em 0;
+	overflow:hidden;
+}
+
+article .line{
+	background-color:#15242a;
+	border-bottom-color:#204656;
+	margin:1.3em 0;
+}
+
+footer .line{
+	margin:2em 0;
+}
+
+.clear:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+#page{
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+article{
+	background-color:#213E4A;
+	margin:3em 0;
+	padding:20px;
+}
+
+figure{
+	/*border:3px solid #142830;*/
+	float:right;
+	height:350px;
+	margin-left:15px;
+	overflow:hidden;
+	width:500px;
+}
+body {
+    font-size: 0.825em;
+    color: #fcfcfc;
+    background-color: #0a495d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+article,figure {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+
+footer{
+	margin-bottom:30px;
+	text-align:center;
+	font-size:0.825em;
+}
+
+
+footer p{
+	margin-bottom:-2.5em;
+	position:relative;
+}
+select,#title{
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*
+#x{
+	float:left;
+}*/
+.stylescroll
+{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.button_table{
+	width: 48%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#chart_space{
+	background-color: white;
+}
+#chart_head,#chart_title{
+	color: #0a495d;
+}
+#dataTable{
+	width: 100%;
+}
+#fileUpload,#upload{
+	width: auto;
+}
+.button_t{
+	width: 40%;
+}
+a:hover{
+	text-decoration:none;
+	background-color:rgb();
+	color: "blue";
+}
+a{
+	display:inline;
+}

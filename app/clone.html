@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Aliangel Academy Page- Detailed Identity</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       
+    </head>
+    
+    <body>
+    	
+    	<section id="page"> 
+    
+            <header> 
+            
+                <hgroup>
+                    <a href="index.html">
+                    <h1>Aliangel Academy</h1>
+                        <h3>Detailed Identity</h3>
+                    </a>
+                </hgroup>
+            
+            </header>
+            
+            <section id="articles"> 
+
+                <div class="line"></div>  
+                
+                <article id="article1"> 
+                    <h2>You Are Welcome </h2>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="articleBody clear">
+                    
+                    	
+                        <figure> 
+                           
+                        <h3>Enter Your Data</h3>
+                                <br>
+                        <div class="stylescroll">
+                                <table id="dataTable" border="1">
+                                <tr>
+                                    <td>s/n</td>
+                                    <td>Name</td>
+                                    <td>Address</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input  type="text" id="x-axis"/></td>
+                                    <td><input  type="text" id="y-axis"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input  type="text" id="x-axis"/></td>
+                                    <td><input  type="text" id="y-axis"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><input  type="text" id="x-axis"/></td>
+                                    <td><input  type="text" id="y-axis"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><input  type="text" id="x-axis"/></td>
+                                    <td><input  type="text" id="y-axis"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    
+                        
+                        </figure>
+                        
+                        <p>
+                           <label> Enter Your Choice of course </label>
+                                <select id = "type" name = "type">
+                                <option value = "Python" onclick="learnPython()">python</option>
+                                <option value = "Javascript" onclick="learnJavascript()">javascript</option>
+                        
+                                </select>
+                                <br>
+                            <label for ="title"> Enter Others</label>
+                            <input type ="text" id = "title" name="title">
+                            <br>
+                            <br>
+                            <label for="files">Upload a image:</label>
+                            <input type="file" id="fileUpload" accept=".jpeg" />
+                            <input type="button" id="upload" value="Upload" />
+                            <br>
+                            <br>
+                    
+
+                                
+                        </p>
+                    </div>
+                </article>
+
+
+
+                <div class="line"></div>  
+                
+                <article id="chart_space"> 
+                    <h2 id = "chart_head">Welcome Home- </h2>
+                        <p id="chart_title">Hakuna Matata</p>                    
+                    <div class="line"></div>
+                    <div>
+                        <canvas id="can" width="500" height="500" />
+                    </div>
+                </article>
+
+
+            </section>
+
+        <footer> 
+
+           <div class="line"></div>
+           
+           <p>Copyright 2016 - Aliangel Academy - Detailed Identity</p>
+        </footer>
+            
+		</section>    
+
+<script type="text/javascript">
+$(function () {
+    $("#upload").bind("click", function () {
+        var regex = /(img.jpeg)$/;
+        if (regex.test($("#fileUpload").val().toLowerCase())) {
+            if (typeof (FileReader) != "undefined") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var cells=[];
+                    var rows = e.target.result.split("\n");
+                    for (var i = 0; i < rows.length; i++) {
+                        cells[i] = rows[i].split(",");
+                    }
+                    lengthData=cells.length;
+                    lengthTable = document.getElementById('dataTable').rows.length-1;
+                    if(lengthTable<lengthData){
+                        for(var t=1;t<=lengthData-lengthTable;t++){
+                            insertRow('dataTable');
+                        }
+                    }
+                    populateTable(cells);
+                }
+                reader.readAsText($("#fileUpload")[0].files[0]);
+            } else {
+                alert("This browser does not support HTML5.");
+            }
+        } else {
+            alert("Please upload a valid image file.");
+        }
+    });
+});
+</script>    
+
+    </body>
+</html>
